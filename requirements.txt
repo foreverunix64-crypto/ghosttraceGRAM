@@ -1,0 +1,5 @@
+Quart
+telethon
+flask
+flask_cors
+textual

